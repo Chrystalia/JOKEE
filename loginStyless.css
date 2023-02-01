@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --inter: 'Inter', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("images/Base.png");
+    background-size: cover;
+    position: relative;
+}
+
+input {
+    padding-left: 0;
+}
+
+.header{
+background-color: #634932;
+margin-top: 0px;
+margin-left: 0px;
+height: 9vh;
+display: flex;
+justify-content: center;
+align-items: center;
+position: sticky;
+}
+
+.kotak-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content:center;
+    width: 5vw;
+
+}
+
+.gambar-logo {
+    width: 6vw;
+    height: 6vh;
+}
+
+.kotak-signin{
+    background-color: #DBC0AB;
+    border-radius: 100px;
+    position: absolute;
+    width: 12vw;
+    height : 5vh;
+    right: 3%;
+    text-align: center;
+    font-size: 20px;
+    margin-left: 0px;
+    box-shadow: 2px 3px 4px rgb(0 0 0 / 0.5 );
+}
+
+.kotak-signin:hover{
+    background: #967258 ;
+    opacity: 0.9;
+}
+
+.tulis-signin{
+    padding-top: 8px;
+    font-family: var(--inter);
+    font-size: 16px;
+    color: black;
+}
+
+.font-signin{
+    color: white;
+    font-size: 50px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    font-family: var(--inter);
+}
+
+
+.kotak-email{
+    background-color: #000000;
+    display: flex;
+    position: relative;
+    border-radius: 10px;
+    margin-top: 30px;
+    width: 26vw;
+    height: 8vh;
+}
+
+.kotak-email:focus{
+    outline-color: none;
+    outline-style: none;
+    outline:none;
+}
+
+.icon-email{
+    display: flex;
+    position: relative;
+    margin-left: 22px;
+    width: 28px;
+}
+
+#tulis-email{
+    display: inline;
+    position: relative;
+    margin-left: 15px;
+    padding-left: 8px;
+    background-color: #000000;
+    text-decoration: #DBC0AB;
+    border: none;
+    font-family: var(--inter);
+    outline-color: none;
+    outline-style: none;
+    outline:none;
+}
+
+.kotak-email input{
+    color: aliceblue;
+    width: 20vw;
+    border-radius: 10px;
+    font-family: var(--inter);
+}
+
+.kotak-password{
+    background-color: #000000;
+    display: flex;
+    position: relative;
+    margin-top: 10px;
+    width: 26vw;
+    height: 8vh;
+    border-radius: 10px;
+}
+
+.icon-password{
+    display: flex;
+    position: relative;
+    margin-left: 27px;
+    width: 17.5px;
+    margin-top: 1   px;
+}
+
+#tulis-password{
+    display: inline;
+    position: relative;
+    margin-left: 25px;
+    padding-left: 4px;
+    background-color: #000000;
+    text-decoration: #DBC0AB;
+    border: none;
+    font-family: var(--inter);
+    outline-color: none;
+    outline-style: none;
+    outline:none;
+}
+
+.kotak-password input {
+    color: aliceblue;
+    width: 25vw;
+    border-radius: 10px;
+    font-family: var(--inter);
+}
+
+.kotak-password:focus{
+    outline: none;
+}
+
+.tombol-login{
+    margin-top: 30px;
+    background-color: #DBC0AB;
+    border-radius: 100px;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    position: relative;
+    opacity: 0.6;
+    font-family: var(--inter);
+}
+
+.tombol-login:hover{
+    background: #DBC0AB ;
+    opacity: 0.9;
+}    
+.tombol-login:focus{
+    background: #DBC0AB ;
+    opacity: 0.9;
+}
+.tulis-login{
+    padding-top: 12px;
+    font-size: 10;
+    font-family: var(--inter);
+}
+
+#tulis-login-submit{
+    font-size: 2;
+    font-family: var(--inter);
+    background-color: #DBC0AB;
+    border-radius: 100px;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    position: relative;
+    font-family: var(--inter);
+    border: none;
+    font-weight: bold;
+}
+.text-account{
+    color: #FFFFFF;
+    font-size: smaller;
+    font-weight: 100;
+    margin-top: 15px;
+    font-family: var(--inter);
+    font-weight: 300;
+}
+
+.text-account-2 a{  
+    color: #DBC0AB;
+    font-family: var(--inter);
+    font-weight: 500;
+}
+
+.text-account-2:hover a{
+    color: #DBC0AB;
+    font-family: var(--inter);
+    font-weight: 500;
+    text-decoration: underline;
+}

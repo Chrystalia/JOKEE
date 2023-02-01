@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica', sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    margin-top: 80px;
+    padding-bottom: 30px;
+    justify-content: center;
+}
+.next-prev-btn{
+    margin-top: 4px;
+    width: 30px;
+}
+.title{
+    display: inline;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+}
+.wrapper{
+    width: 1200px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+.wrapper header{
+    display: flex;
+    align-items: center;
+    padding: 25px 25px 0px;
+    border-radius: 5px 5px 0px 0px;
+    justify-content: space-between;
+    background-color: #967258;
+}
+header .icons{
+    background-color: #634932;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    padding: 0px 10px;
+}
+p.current-date{
+    display: flex;
+    align-items: center;
+}
+header .icons span{
+    height: 38px;
+    width: 38px;
+    /* margin: 0 1px; */
+    cursor: pointer;
+    color: #967258;
+    text-align: center;
+    line-height: 38px;
+    font-size: 1.9rem;
+    user-select: none;
+    border-radius: 50%;
+}
+/* .icons span:last-child{
+    /* margin-right: -10px; 
+} */
+header .icons span:hover{
+    background: #513b27;
+}
+header .current-date{
+    height: 50px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+.calendar{
+    padding: 5px 20px;
+    background-color: #967258;
+}
+.calendar ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    text-align: center;
+}
+.calendar .days{
+    margin-bottom: 20px;
+}
+.calendar li{
+    color: #333;
+    width: calc(100% / 7);
+    font-size: 15px;
+}
+.calendar .weeks li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #634932;
+    height: 40px;
+    font-weight: 700;
+    color: white;
+    border: 3px solid #967258;
+    border-radius: 5px;
+}
+.calendar .days li{
+    background-color: #DBC0AB;
+    height: 75px;
+    border: 3px solid #967258;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 3px 8px 8px 8px;
+    border-radius: 5px;
+    color: #634932;
+    overflow: hidden;
+}
+.calendar .days .deadlines li{
+    padding: 0;
+    display: flex;
+    align-items :flex-start;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0px 5px;
+    width: 145px;
+    height: 20px;
+    font-size: 12px;
+    border: none;
+    background-color: #967258;
+    color: white;
+    margin-bottom: 3px;
+}
+.days li.inactive{
+    opacity: 50%;
+}
+.days li.active{
+    /* color: white; */
+    /* background-color: ; */
+    background: #efdfd2;
+}
+.days li.deadline{
+    height: 5px;
+    width: 2px;
+    background: red;
+}
+ul.deadline{
+    height: 10px;
+    width: 15px;
+    background: black;
+}
+.days li::before{
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    height: 40px;
+    width: 40px;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+/*
+.days li.active::before{
+    /* background: black; 
+}
+.days li:not(.active):hover::before{
+    /* background: red; 
+}

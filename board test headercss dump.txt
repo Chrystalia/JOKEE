@@ -1,0 +1,392 @@
+
+/* Header */
+
+.header{
+    background-color: #634932;
+    /* border: 5px solid blue; */
+    margin-top: 0px;
+    margin-left: 0px;
+    height: 7.5vh;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    position: sticky;
+    z-index: 1;
+ 
+ }
+ 
+ .kotak-logo{
+     /* border: 5px solid red; */
+     display: flex;
+     /* flex-direction: row; */
+     align-items: center;
+     text-align: center;
+     justify-content: center;
+     width: 5vw;
+     position: absolute;
+     
+ }
+ 
+ .gambar-logo {
+     width: 6vw;
+     height: 4vh;
+     flex-direction: column;
+     position: relative;
+     display: flex;
+ }
+ 
+ .kotak-signout{
+     /* border: 5px solid blue; */
+     background-color: #DBC0AB;
+     border-radius: 100px;
+     position: absolute;
+     margin-left: 150px;
+     width: 10vw;
+     height : 4vh;
+     right: 3%;
+     margin-top: 0px;
+     /* height: 7vhh; */
+     text-align: center;
+     font-size: 10px;
+     /* padding-top: 3px; */
+     margin-left: 0px;
+     box-shadow: 2px 3px 4px rgb(0 0 0 / 0.5 );
+ }
+ 
+ .kotak-signout:hover{
+     background: #967258 ;
+     /* mix-blend-mode: color-dodge; */
+     opacity: 0.9;
+ }
+ 
+ .tulis-signout{
+     padding-top:6px;
+     font-family: var(--inter);
+     font-size: 14px;
+     /* font-style: italic; */
+ }
+ 
+ .font-signout{
+     color: white;
+     /* font-size: 10vw; */
+     font-size: 30px;
+     display: flex;
+     position: relative;
+     justify-content: center;
+     align-items: center;
+     margin-top: 80px;
+     font-family: var(--inter);
+ }
+ 
+ 
+ .header2{
+     /* background-color: wheat; */
+     position: absolute;
+     display: flex;
+     top: 0px;
+     left: 0px;
+     padding-top: 2px;
+     padding-left: 0px;
+     margin-left: 0px;
+     height: 7vh;
+     width: 100vh;
+     z-index:2;
+     /* position: sticky; */
+ }
+ 
+ .kotak-hamburger{
+     /* border: 1px solid red; */
+     display: inline;
+     position: relative;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     padding-top: 0px;
+     width: 4vw;
+     height: 7vh;
+     margin-top: 0px;
+     margin-bottom: 3px;
+     /* color: aliceblue; */
+ }
+ 
+ .kotak-hamburger:hover{
+     background-color: #a3714d   ;
+ }
+ 
+ .gambar-hamburger{
+     position: relative;
+     justify-content: flex-start;
+     align-items: flex-start;
+     display: flexbox;
+     height: 3vh;
+     width: fit-content;
+     margin-left: 15px;
+     margin-top: 15px;
+     
+ }
+ 
+ .kotak-board{
+     position: relative;
+     display: flex;
+     justify-content: baseline;
+     align-items: center;
+     /* border: 1px solid white; */
+     margin-left: 10px;
+     height: 6.4vh;
+     width: 4vw;
+     padding-left: 15px;
+     margin-top: 0px;
+     /* color: white; */
+     
+ }
+ 
+ .tulis-board{
+     color: #FFFFFF;
+     font-size: 17px;
+     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+ }
+ 
+ .tulis-board{
+     color: #FFBE9D;
+     /* border-bottom: 5px solid #DBC0AB; */
+ }
+ 
+ 
+ .kotak-board{
+     border-bottom: 5px solid #DBC0AB;
+     color: #DBC0AB;
+     font-weight: 100;
+ }
+ .kotak-board:hover .tulis-board{
+     color: #DBC0AB;
+     font-weight: 100; 
+     /* border-bottom: 5px solid #DBC0AB; */
+ }
+ 
+ 
+ .kotak-final-product{
+     position: relative;
+     display: flex   ;
+     justify-content: baseline;
+     align-items: center;
+     /* border: 1px solid white; */
+     margin-left: 0px;
+     height: 6.4vh;
+     width: 7vw;
+     padding-left: 15px;
+     margin-top: 0px;
+     margin-left: 20px;
+     font-weight:40;
+     font-size:small;
+     
+ }
+ 
+ .tulis-final-product{
+     color: #FFFFFF;
+     font-weight:40;
+     font-size:small;
+     font-size: 17px;
+     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+ }
+ 
+ .tulis-final-product:hover{
+     color: #FFBE9D;
+ }
+ 
+ .kotak-final-product:visited {
+     color: #DBC0AB;
+     font-weight: 100; 
+     border-bottom: 5px solid #DBC0AB;
+ }
+ 
+ .kotak-final-product:visited .tulis-final-product{
+     color: #DBC0AB;
+     font-weight: 100; 
+     /* border-bottom: 5px solid #DBC0AB; */
+ }
+ 
+ .kotak-calender{
+     position: relative;
+     display: flex   ;
+     justify-content: baseline;
+     align-items: center;
+     /* border: 1px solid white; */
+     margin-left: 0px;
+     height: 6.4vh;
+     width: 5vw;
+     padding-left: 15px;
+     margin-top: 0px;
+     margin-left: 20px;
+     font-weight:40;
+     font-size:small;
+ }
+ 
+ .tulis-calender{
+     color: #FFFFFF;
+     font-weight:40;
+     font-size:small;
+     font-size: 17px;
+     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+ }
+ 
+ .tulis-calender:hover{
+     color: #FFBE9D;
+ }
+ 
+ .kotak-calender:visited {
+     color: #DBC0AB;
+     font-weight: 100; 
+     border-bottom: 5px solid #DBC0AB;
+ }
+ 
+ .kotak-calender:visited .tulis-calender{
+     color: #DBC0AB;
+     font-weight: 100; 
+     /* border-bottom: 5px solid #DBC0AB; */
+ }
+ 
+ 
+ .kotak-template{
+     /* border: 1px solid white; */
+     position: relative;
+     display: flex   ;
+     justify-content:flex-start;
+     align-items: center;
+     margin-left: 0px;
+     height: 6.4vh;
+     width: 5vw;
+     padding-left: 15px;
+     margin-top: 0px;
+     margin-left: 20px;
+     font-weight:40;
+     font-size:small;
+ }
+ 
+ .tulis-template{
+     color: #FFFFFF;
+     font-weight:40;
+     font-size:small;
+     font-size: 17px;
+     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+ }
+ 
+ .tulis-template:hover{
+     color: #FFBE9D;
+ }
+ 
+ .kotak-template:visited  {
+     color: #DBC0AB;
+     font-weight: 100; 
+     border-bottom: 5px solid #DBC0AB;
+ }
+ 
+ .kotak-template:visited .tulis-template{
+     color: #DBC0AB;
+     font-weight: 100; 
+     /* border-bottom: 5px solid #DBC0AB; */
+ }
+ 
+ .button-sidebar{
+     /* border: 2px solid red; */
+     height: 92.5vh;
+     width: 320px;
+     background-color: #634932;
+     display: block;
+     transition: 0.5s;
+     top: 0;
+     left: 0;
+     z-index: 1;
+     overflow-x: hidden;
+     margin-top: 55px;
+     position:fixed;
+   
+ }
+ 
+ .button-sidebar a {
+     display: block;
+     transition: 0.3s;
+     float: none;
+ }
+ 
+ /* @media screen and (max-height: 450px){
+     .button-sidebar {padding}
+ } */
+ 
+ .my-board{
+     margin-left: 30px;
+     padding-top: 5px;
+     font-size: 25px;
+     font-weight:bolder;
+     color: #ECE0D0;
+     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     width: 150px;
+     /* background-color: pink; */
+ }
+ 
+ .simbol-silang{
+     position: relative;
+     flex-direction: column;
+     align-items: flex-end;
+     margin-left: 270px;
+     padding-top: 15px;
+     width: 1.5vw;
+ }
+
+.project-lists{
+    padding: 5px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-names{
+    display: flex;
+    align-items: center;
+}
+
+.project-name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #967258;
+    padding: 0 20px;
+    margin-top: 1px;
+    width: 100%;
+    height: 25px;
+    font-family: Helvetica;
+    font-weight: lighter;
+    font-size: 14px;
+    color: #ECE0D0;
+}
+
+.project-lists-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+}
+
+#add-project{
+    text-decoration: none;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    background: #ECE0D0;
+    border: none;
+    width: 100%;
+    height: 30px;
+    background: #967258;
+    color: #ECE0D0;
+}
+
+#add-project-container{
+    display: flex;
+    flex-direction: column;
+    background-color: #967258;
+    width: 100%;
+    color: #967258;
+    border: none;
+    border-radius: 0;
+    padding: 5px;
+}
