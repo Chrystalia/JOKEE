@@ -40,7 +40,7 @@ if(isset($_GET['delProject'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="headerdsssss.css">
     <link rel="shortcut icon" href="images/Logo JOKEE.png" type="image/x-icon">
-    <title>Jokee Header</title> 
+    <title>Jokee Headerrr</title> 
 </head>
 <body>
     <div class="header">
