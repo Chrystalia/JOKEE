@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 27, 2023 at 07:24 AM
+-- Generation Time: Feb 04, 2023 at 01:02 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -20,6 +20,22 @@ SET time_zone = "+00:00";
 --
 -- Database: `jokeedb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `calendar`
+-- (See below for the actual view)
+--
+CREATE TABLE `calendar` (
+`email` varchar(50)
+,`projectID` int(11)
+,`projectTitle` varchar(30)
+,`listTitle` varchar(50)
+,`cardID` int(11)
+,`cardTitle` varchar(50)
+,`deadline` date
+);
 
 -- --------------------------------------------------------
 
@@ -41,13 +57,14 @@ CREATE TABLE `cardheader` (
 --
 
 INSERT INTO `cardheader` (`listID`, `cardID`, `cardTitle`, `description`, `deadline`, `colorCode`) VALUES
-(31, 48, 'tes', 'abc', '2023-01-20', '0'),
+(27, 48, 'tes', 'abc', '0000-00-00', '0'),
 (27, 79, 'elo', 'abc', '0000-00-00', '0'),
 (27, 111, 'hai', NULL, NULL, NULL),
 (1, 114, 'tes omo', 'hai', '2023-01-11', '0'),
-(1, 115, 'tes lagi', 'hai', '2023-01-27', '0'),
+(1, 115, 'tes lagi', 'hai', '2023-01-20', '0'),
 (45, 116, 'tessssss', NULL, NULL, NULL),
-(31, 117, 'haiiiiiiiii', NULL, NULL, NULL);
+(31, 117, 'haiiiiiiiii', NULL, NULL, NULL),
+(55, 120, 'b', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -120,10 +137,11 @@ CREATE TABLE `cardtodolist` (
 INSERT INTO `cardtodolist` (`cardID`, `toDoList`, `id`, `status`) VALUES
 (79, 's', 42, 0),
 (48, 'hii', 49, 0),
-(114, 'a', 50, 1),
+(114, 'a', 50, 0),
 (115, 'a', 53, 0),
 (115, 'v', 56, 0),
-(115, 'a', 57, 0);
+(115, 'a', 57, 0),
+(114, 'b', 58, 1);
 
 -- --------------------------------------------------------
 
@@ -170,7 +188,9 @@ INSERT INTO `chat` (`id`, `email`, `cardID`, `chatText`, `chatTime`) VALUES
 (30, 'glenys@gmail.com', 115, 'a', '2023-01-26 10:31:16'),
 (31, 'glenys@gmail.com', 115, 'b\r\n', '2023-01-26 10:31:20'),
 (32, 'glenys@gmail.com', 115, 'c', '2023-01-26 10:31:47'),
-(33, 'glenys@gmail.com', 114, 'haiiii', '2023-01-26 16:26:49');
+(33, 'glenys@gmail.com', 114, 'haiiii', '2023-01-26 16:26:49'),
+(34, 'glenys@gmail.com', 114, 'hai', '2023-02-02 21:11:53'),
+(35, 'jesse@gmail.com', 120, 'h', '2023-02-03 16:06:43');
 
 -- --------------------------------------------------------
 
@@ -216,7 +236,8 @@ INSERT INTO `projectlist` (`projectID`, `listID`, `listTitle`) VALUES
 (1, 31, 'tes in project id 4'),
 (4, 39, 'id4 t1'),
 (5, 45, 'hai'),
-(1, 50, 'a');
+(1, 53, 'a'),
+(62, 55, 'a');
 
 -- --------------------------------------------------------
 
@@ -238,7 +259,7 @@ CREATE TABLE `projectmember` (
 CREATE TABLE `userproject` (
   `email` varchar(50) NOT NULL,
   `projectID` int(11) NOT NULL,
-  `projectStatus` int(11) NOT NULL DEFAULT 0,
+  `projectStatus` int(11) NOT NULL DEFAULT 1,
   `projectTitle` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -247,18 +268,18 @@ CREATE TABLE `userproject` (
 --
 
 INSERT INTO `userproject` (`email`, `projectID`, `projectStatus`, `projectTitle`) VALUES
-('glenys@gmail.com', 1, 0, 'Project 1'),
-('abdi@gmail.com', 2, 0, 'project Abdi 1'),
-('glenys@gmail.com', 3, 0, 'Project 2'),
-('glenys@gmail.com', 4, 0, 'Project 3'),
-('abdi@gmail.com', 5, 0, 'project Abdi 2'),
+('glenys@gmail.com', 1, 1, 'Project 1'),
+('abdi@gmail.com', 2, 1, 'project Abdi 1'),
+('glenys@gmail.com', 3, 1, 'Project 2'),
+('glenys@gmail.com', 4, 1, 'Project 3'),
+('abdi@gmail.com', 5, 1, 'project Abdi 2'),
 ('abdi@gmail.com', 6, 0, 'project Abdi 2'),
 ('abdi@gmail.com', 7, 0, 'project Abdi 4'),
 ('abdi@gmail.com', 8, 0, 'project Abdi 4'),
 ('abdi@gmail.com', 13, 0, 'project Abdi 6'),
 ('abdi@gmail.com', 14, 0, 'project Abdi 6'),
 ('abdi@gmail.com', 15, 0, 'project Abdi 8'),
-('glenys@gmail.com', 23, 0, 'Project 4');
+('jesse@gmail.com', 62, 1, 'a');
 
 -- --------------------------------------------------------
 
@@ -269,19 +290,29 @@ INSERT INTO `userproject` (`email`, `projectID`, `projectStatus`, `projectTitle`
 CREATE TABLE `users` (
   `email` varchar(50) NOT NULL,
   `Userpassword` varchar(50) NOT NULL,
-  `username` varchar(25) NOT NULL
+  `username` varchar(25) NOT NULL,
+  `backgroundPath` varchar(500) NOT NULL DEFAULT 'images/background/Template 18.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`email`, `Userpassword`, `username`) VALUES
-('', '', ''),
-('abdi@gmail.com', '123', 'abdi'),
-('glenys@gmail.com', 'abc', 'glenys'),
-('ipe@gmail.com', 'abc', 'ipe'),
-('jesse@gmail.com', 'abc', 'Jesse Orlanda');
+INSERT INTO `users` (`email`, `Userpassword`, `username`, `backgroundPath`) VALUES
+('', 'a', 'a', 'images/background/default.png'),
+('abdi@gmail.com', '123', 'abdi', 'images/background/Template 1.png'),
+('glenys@gmail.com', 'abc', 'glenys', 'images/background/Template 5.png'),
+('ipe@gmail.com', 'abc', 'ipe', 'images/background/Template 18.png'),
+('jesse@gmail.com', 'abc', 'Jesse Orlanda', 'images/background/Template 6.png');
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `calendar`
+--
+DROP TABLE IF EXISTS `calendar`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `calendar`  AS SELECT `up`.`email` AS `email`, `up`.`projectID` AS `projectID`, `up`.`projectTitle` AS `projectTitle`, `pl`.`listTitle` AS `listTitle`, `ch`.`cardID` AS `cardID`, `ch`.`cardTitle` AS `cardTitle`, `ch`.`deadline` AS `deadline` FROM ((`userproject` `up` left join `projectlist` `pl` on(`up`.`projectID` = `pl`.`projectID`)) left join `cardheader` `ch` on(`pl`.`listID` = `ch`.`listID`)) WHERE `up`.`projectStatus` = 1 AND `ch`.`deadline` <> 'NULL' AND `ch`.`deadline` <> '0000-00-00' ORDER BY `ch`.`deadline` ASC ;
 
 --
 -- Indexes for dumped tables
@@ -368,7 +399,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cardheader`
 --
 ALTER TABLE `cardheader`
-  MODIFY `cardID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
+  MODIFY `cardID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- AUTO_INCREMENT for table `cardimage`
@@ -380,25 +411,25 @@ ALTER TABLE `cardimage`
 -- AUTO_INCREMENT for table `cardtodolist`
 --
 ALTER TABLE `cardtodolist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `projectlist`
 --
 ALTER TABLE `projectlist`
-  MODIFY `listID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `listID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `userproject`
 --
 ALTER TABLE `userproject`
-  MODIFY `projectID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `projectID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- Constraints for dumped tables

@@ -9,6 +9,9 @@
     <title>Document</title>
 </head>
 <body>
+<?php include 'background.php' ?>
+<div class="layer"></div>
+
     <div class="container center">
         <div class="no-project-container center vertical">
             <img src="images/kanban (3).png" class="add-project-img">

@@ -14,6 +14,10 @@ $email = $_SESSION['email'];
     <link rel="stylesheet" href="calendarsss.css">
   </head>
   <body>
+    <!-- background -->
+    <?php include 'background.php' ?>
+    <div class="layer"></div>
+    
     <?php $email = $_SESSION['email']; ?>
     <div class="vertical">
       <div class="title">Calendar</div>
@@ -88,36 +92,39 @@ $email = $_SESSION['email'];
               //$row = mysqli_fetch_assoc($usercalendar);
               ?>
               
-              let idx = 0;
-              let flag = 0;
-              <?php  while($row = mysqli_fetch_array($usercalendar)) {
-                ?>
-                idx++;
-                if(flag === -1){
-                } 
-                // elseif(){
-                  // kondisi kalau lebih dari 2
-                  // bikin SELECT * FROM calendar WHERE email ='$email AND deadline = currDate;
-                  // kalau baris lebih dari 2, jalanin else if ini
-                else if(currDate === '<?php echo $row['deadline'] ?>' ){ // harusnya 6 Januari muncul 2x
-                  // loop sebanyak qry
-                  <?php 
-                    $deadline = $row['deadline'];
-                    $todayDeadlines = mysqli_query($db, "SELECT * FROM calendar WHERE email = '$email' AND deadline = '$deadline'");
+              <?php if(mysqli_num_rows($usercalendar) == 0){ ?>
+                liTag += `<li class="${isToday}">${i}</li>`
+              <?php }else{ ?>
+                let idx = 0;
+                let flag = 0;
+                <?php  while($row = mysqli_fetch_array($usercalendar)) {
                   ?>
-                      liTag += `<li class="${isToday}">${i}
-                                  <ul class="deadlines">
-                                    <?php while($deadlines = mysqli_fetch_array($todayDeadlines)) { ?>
-                                      <li><?php echo $deadlines['projectTitle']." - ".$deadlines['cardTitle'] ?></li>
-                                    <?php } ?>
-                                  </ul>
-                                </li>` 
-                      flag = -1;
-                }else if(idx == '<?php echo $numOfRow ?>'){
-                  liTag += `<li class="${isToday}">${i}</li>`
-                }
-              <?php } ?>
-                  
+                  idx++;
+                  if(flag === -1){
+                  } 
+                  // elseif(){
+                    // kondisi kalau lebih dari 2
+                    // bikin SELECT * FROM calendar WHERE email ='$email AND deadline = currDate;
+                    // kalau baris lebih dari 2, jalanin else if ini
+                  else if(currDate === '<?php echo $row['deadline'] ?>' ){ // harusnya 6 Januari muncul 2x
+                    // loop sebanyak qry
+                    <?php 
+                      $deadline = $row['deadline'];
+                      $todayDeadlines = mysqli_query($db, "SELECT * FROM calendar WHERE email = '$email' AND deadline = '$deadline'");
+                    ?>
+                        liTag += `<li class="${isToday}">${i}
+                                    <ul class="deadlines">
+                                      <?php while($deadlines = mysqli_fetch_array($todayDeadlines)) { ?>
+                                        <li><?php echo $deadlines['projectTitle']." - ".$deadlines['cardTitle'] ?></li>
+                                      <?php } ?>
+                                    </ul>
+                                  </li>` 
+                        flag = -1;
+                  }else if(idx == '<?php echo $numOfRow ?>'){
+                    liTag += `<li class="${isToday}">${i}</li>`
+                  }
+                <?php } ?>
+              <?php } ?>    
               
                         
                         //$row = mysqli_fetch_assoc($usercalendar);

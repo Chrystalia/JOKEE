@@ -1,0 +1,30 @@
+Tugas:
+v SE: memperbaiki header 
+v SE: my board, actve maka background colornya gelap
+v SE: comment,
+x SE: password enter -> click
+v SE: comment area styling
+v kurangi lebar pop up card
+v SE: deadline
+v SE: to do list checklist
+v SE: login on enter = click
+
+v kalau delete project, terus ke start project, gak ke hapus
+v update status, kalau 0 artinya udah dihapus
+v perbaiki bagian login kalau gak ada board
+v - gak bisa SELECT * FROM calendar WHERE deadline = $currDate
+
+x SE: calendar = https://phppot.com/php/php-calendar-event-management-using-fullcalendar-javascript-library/
+v calendar, connect to php
+v styling calendar
+x template = dibuat Abdi
+v underline based on page = https://stackoverflow.com/questions/6987157/dynamic-underlining-of-active-page
+- connect to github
+v template: change all background,
+- template: upload,
+v kalau belum ada project deadline, calendar akan kosong
+- start project, maka tidak ada underline active
+v bagaimana cara agar ketika klik gambar, imagePath ke update yg di user
+- template: show template based on php
+- template: pagination
+- template: left and right arrow hover

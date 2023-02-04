@@ -1,0 +1,1 @@
+https://www.laratutorials.com/drag-and-drop-file-upload-using-dropzonejs-php-mysql/?ref=morioh.com&utm_source=morioh.com

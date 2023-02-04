@@ -1,0 +1,178 @@
+h1{
+    color: white;
+    font-family: 'Inter';
+    font-size: 4.1vw;
+    }
+    
+    .layer{
+        background-color: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        opacity: 0.5;
+        z-index: -10;
+        width: 100vw;
+        height: 100vh;
+    }
+
+body {
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+    padding-bottom: 30px;
+    justify-content: center;
+}    
+    .template-btn{
+        color: white;
+        font-family: 'Inter';
+        list-style-type: none;
+        font-size: 1.3vw;
+        font-weight: 600;
+        padding: 1.8vw 0vw 0vw 1vw;
+        margin-left: 2vw;
+        background: transparent;
+        border: none;
+    }
+    
+    .button{
+        width: 1.5vw;
+        height: 2.3vw;
+        margin-right: 3vw;
+        margin-left: 2vw;
+    }
+    
+    .head {
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .temp{
+        background-color:  #634932;
+        border-radius: 5px;
+        width: 1150px;
+        height: 520px;
+        /* margin: 0vw 0vw 5vw 0vw; */
+    }
+    
+    .selected-page, .cont{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .cont{
+        border-top: 3px #967258 solid;
+        margin-top: 0.2vw;
+        padding: 1.5vw 2vw 2vw 2vw;
+        margin-bottom: 4vw;
+    }
+    .horizontal{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .vertical{
+        display: flex;
+        flex-direction: column;
+    }
+    .page{
+        display: flex;
+        width: 1150px;
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding-right: 40px;
+        color: white;
+        font-size: 14px;
+    }
+    .cont img{
+        height: 2.6vw;
+        width: auto;
+    }
+    .pic{
+        margin-left: 30px;
+    }
+    .pic img{
+        width: 300px;
+        height: 180px;
+        margin: 0.5vw 0.5vw;
+        border-radius: 20px;
+    }
+    .pic img:hover{
+        /* width: 304px;
+        height: 184px;
+        box-shadow: 0px 8px 8px 0px rgba(0,0,0,.5); */
+        width: 300px;
+        /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+        box-shadow: 0 4px 8px 0  rgb(239, 170, 108), 0 10px 10px 0 rgb(148, 92, 75); 
+             /* 60px 0 120px #f0f, left magenta 
+             -60px 0 120px #0ff; right cyan; */
+        text-align: center;
+    }
+    .arrow{
+        margin: 0 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 45px;
+        height: 45px;
+    }
+    .arrow:hover{
+        background: #513b27;
+        border-radius: 50%;
+    }
+
+/* upload */
+#drop_file_zone {
+    border: 2px dashed #fff;
+    height: 400px;
+    width: 550px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#drop_file_zone[drop-active=true]{
+    border: 2px solid #fff;
+    background: #56402c;
+}
+#drag_upload_file {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#drag_upload_file p input {
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: #967258;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+#drag_upload_file p input:hover{
+    background: rgb(177, 133, 97);
+}
+#drag_upload_file header{
+    font-size: 30px;
+    font-weight: 500;
+    color: #fff;
+}
+#drag_upload_file span, p{
+    font-size: 25px;
+    font-weight: 500;
+    color: #fff;
+    margin: 10px 0;
+}
+#drag_upload_file #selectfile {
+  display: none;
+}
+#drop_file_zone .icon{
+    font-size: 100px;
+    color: #967258;
+}

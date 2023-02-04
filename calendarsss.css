@@ -7,7 +7,7 @@
 body{
     display: flex;
     align-items: center;
-    margin-top: 80px;
+    margin-top: 70px;
     padding-bottom: 30px;
     justify-content: center;
 }
@@ -78,6 +78,7 @@ header .current-date{
 .calendar{
     padding: 5px 20px;
     background-color: #967258;
+    border-radius: 0px 0px 5px 5px;
 }
 .calendar ul{
     display: flex;

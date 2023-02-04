@@ -37,9 +37,6 @@
             <img src="images/Vector home3.svg" alt="" class="vector-home">
         </div>
     </div>
-
-
-    
     
 </body>
 </html>

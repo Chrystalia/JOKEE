@@ -1,7 +1,7 @@
 <?php 
-session_start();
-include 'boardfunctions.php';
-$db = mysqli_connect('localhost', 'root', '', 'jokeedb');     
+include_once 'db.conn.php';
+include_once 'boardfunctions.php';
+
 
 if(isset($_POST['addProject'])){
     $email = $_POST['email'];
@@ -38,7 +38,7 @@ if(isset($_GET['delProject'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="headerdsssss.css">
+    <link rel="stylesheet" href="headerdssssss.css">
     <link rel="shortcut icon" href="images/Logo JOKEE.png" type="image/x-icon">
     <title>Jokee Header</title> 
 </head>
@@ -126,7 +126,7 @@ if(isset($_GET['delProject'])){
         </div>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="headerrr.js"></script>
+    <script src="headerrrr.js"></script>
 
     <script type="text/javascript">
         $(function() {

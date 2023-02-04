@@ -3,11 +3,9 @@ function addLists() {
   var cancel= document.getElementById("add-list-container");
   console.log(cancel.style.display);
   if (cancel.style.display === "none") {
-    console.log("if");
     addListTitle.style.display = "none";
     cancel.style.display = "block";
   } else if(cancel.style.display === "block"){
-    console.log("else");
     addListTitle.style.display = "block";
     cancel.style.display = "none";
   }

@@ -1,5 +1,5 @@
 <?php
-include 'headerr.php';
+include_once 'headerr.php';
 // include 'boardfunction.php';
 ?>
 
@@ -15,6 +15,10 @@ include 'headerr.php';
 </head>
 
 <body>
+<!-- background -->
+<?php include 'background.php' ?>
+<div class="layer"></div>
+
   <?php 
   $email = $_SESSION['email']; 
   if(isset($_SESSION['projectid']) && $_SESSION['projectid'] != 0){
@@ -22,8 +26,9 @@ include 'headerr.php';
   } else{
     $userprojects = mysqli_query($db, "SELECT * FROM `userproject` WHERE email = '$email' AND projectStatus = 1 HAVING MIN(`projectID`);");
     $userproject = mysqli_fetch_array($userprojects);
-    if($userproject['projectID'] === NULL || mysqli_num_rows($userprojects) === 0){
-      header('location:startProject.php');
+    if($userproject['projectID'] === NULL || mysqli_num_rows($userprojects) === 0){?> 
+      <script> window.location.replace("startProject.php"); </script> 
+    <?php
     }else{
       $_SESSION['projectid'] = $userproject['projectID'];
       // header('location: board.php');
@@ -35,6 +40,7 @@ include 'headerr.php';
 // $_SESSION['projectid'] = $projectid;
 
 ?>
+
 <div class='wrapper'>
   <!-- Show list -->
   <?php
@@ -120,15 +126,15 @@ include 'headerr.php';
       <input type="text" name="cardId" value='<?php echo $cardid?>' style="display: none;" >
       <div class='item-overlay-inner' data-card-id=<?php echo $cardid?>>
         <!-- deadline -->
-        <label for='deadline' class='title'>Deadline: </label>
+        <label for='deadline' class="title-label">Deadline: </label>
         <input class="edit-calendar" type=date name='deadline' value="<?php echo $row['deadline']?>" placeholder="-">
         
         <!-- description -->
-        <label for='description' class='title'>Description: </label>
+        <label for='description' class="title-label">Description: </label>
         <input class="edit" name='description' value="<?php echo $row['description']?>" placeholder="-" autocomplete="off"></input>
         
         <!-- To Do List -->
-        <span class='title'>To Do List:</span>
+        <span class="title-label">To Do List:</span>
         <div class="todo-section vertical">
           <?php 
           $todos = mysqli_query($db, "SELECT * FROM cardtodolist WHERE cardID = $cardid ORDER BY id ASC");
@@ -163,7 +169,7 @@ include 'headerr.php';
         </div>
         
         <!-- <img src="uploads/IMG-63be4f6d6f5b84.13584936.jpg"> -->
-        <label class='title' for=attachment>Attachment: </label>
+        <label class="title-label" for=attachment>Attachment: </label>
         <div class="attached-img-container horizontal">
           <?php
             $attached = mysqli_query($db, "SELECT * FROM cardimage WHERE cardID = $cardid");
@@ -186,7 +192,7 @@ include 'headerr.php';
           </button>
         <!-- <input type='file' name='attachment[]' id='attachment' multiple=true> -->
         
-        <label class="title" for="comment">Comment: </label>
+        <label class="title-label" for="comment">Comment: </label>
         <input type="text" name="email" value="<?php echo $email?>" style="display: none;">
         <!-- <input type="text" class="typing-area" name="chat" placeholder="Type a Comment..."> -->
         <div class="typing-area horizontal">
@@ -219,7 +225,6 @@ include 'headerr.php';
       </div>
   </form>
   </div>
-  
-  
+   
 </body>
 </html>
