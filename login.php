@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php 
+include_once 'db.conn.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +29,7 @@
     <form action="login.php" id="form-email" method="POST" class="form-email"  name="form-email" autocomplete="off">
         <center><div class="kotak-email login-input"> 
             <img src="images/Icon Email.svg" alt="" class="icon-email">
-            <input type="text" id="tulis-email" name="email" placeholder="Email" onkeydown="" autofocus>
+            <input type="text" id="tulis-email" name="$nameOrEmail" placeholder="Email/Username" onkeydown="" autofocus>
         </div></center>
         
         <center><div class="kotak-password login-input">
@@ -45,22 +48,25 @@
     // session_start();
     // require 'functions.php'; 
     
-    $koneksilogin = mysqli_connect("localhost", "root", "", "jokeedb") or die("Database tidak ditemukan");
-    
     // isset($_POST['proses-login']
     
     // $_SERVER['proses-login'] == 'POST'
         
     if(isset($_POST['proses-login'])){
-        $email = $_POST['email'];
+        $nameOrEmail = $_POST['$nameOrEmail'];
         $password = $_POST['password'];
+
+        $query = "SELECT * FROM users WHERE 
+                (email = '$nameOrEmail' AND userPassword = '$password') OR 
+                (username = '$nameOrEmail' AND userPassword = '$password')";
+        $qrys = mysqli_query($db, $query);
         
-        $hasilcek = mysqli_query($koneksilogin, "Select * from users where email = '$email' and userPassword = '$password'");
-        
-        // Cek Email
-        if (mysqli_num_rows($hasilcek) === 1) {
-            // Cek password
-            $_SESSION['email'] = $email;
+        // Cek Email/Username dengan Password
+        if (mysqli_num_rows($qrys) === 1) {
+            // simpan email
+            $stmts = mysqli_query($db, "SELECT * FROM users WHERE email = '$nameOrEmail' OR username = '$nameOrEmail'");
+            $stmt = mysqli_fetch_array($stmts);
+            $_SESSION['email'] = $stmt['email'];
             echo $_SESSION['email'];
             header("Location: board.php");
         }else{

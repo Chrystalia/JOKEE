@@ -72,7 +72,7 @@ $email = $_SESSION['email'];
 
           for (let i = 1; i <= lastDateofMonth; i++) { // creating li of all days of current month
               <?php 
-              $qry = "SELECT * FROM calendar WHERE email = '$email'"; 
+              $qry = "SELECT * FROM calendar WHERE email = '$email' OR memberEmail = '$email'"; 
               $usercalendar=mysqli_query($db, $qry);
               $numOfRow = mysqli_num_rows($usercalendar);
               ?>
@@ -110,7 +110,7 @@ $email = $_SESSION['email'];
                     // loop sebanyak qry
                     <?php 
                       $deadline = $row['deadline'];
-                      $todayDeadlines = mysqli_query($db, "SELECT * FROM calendar WHERE email = '$email' AND deadline = '$deadline'");
+                      $todayDeadlines = mysqli_query($db, "SELECT * FROM calendar WHERE (email = '$email' OR memberEmail = '$email') AND deadline = '$deadline'");
                     ?>
                         liTag += `<li class="${isToday}">${i}
                                     <ul class="deadlines">

@@ -37,22 +37,9 @@ if(isset($_POST['update'])){
   $cardTitle = $_POST['title'];
   $desc = $_POST['description'];
   $deadline = $_POST['deadline'];
-  $colorCode = 0;
-  
-  $updateqry = "UPDATE `cardheader` SET cardTitle='$cardTitle', `description`='$desc', `deadline`='$deadline', colorCode='$colorCode' WHERE cardID=$cardid";
+
+  $updateqry = "UPDATE `cardheader` SET cardTitle='$cardTitle', `description`='$desc', `deadline`='$deadline' WHERE cardID=$cardid";
   mysqli_query($db, $updateqry);
-  // $card_id = mysqli_insert_id($db);
-  // for($i = 0; $i < count($_FILES['attachment']['name']); $i++){
-  //   $target = '/uploads/'.$_FILES['attachment']['name'][$i];
-  //   move_uploaded_file($_FILES['attachment']['tmp_name'][$i], $_SERVER['DOCUMENT_ROOT'].'/'.$target);
-  //   $insertimgqry = "INSERT INTO `cardimage`(`cardID`, `imagePath`) VALUES ('$card_id', '$target')";
-  //   mysqli_query($db, $insertimgqry);
-  // }
-  // for($i = 0; $i < count($_POST['todos']); $i++){
-  //   $current_todo = $_POST['todos'][$i];
-  //   $inserttodoqry = "INSERT INTO `cardtodolist`(`cardID`, `toDoList`) VALUES ('$card_id', '$current_todo')";
-  //   mysqli_query($db, $inserttodoqry);
-  // }
   header('location: board.php');
 }
 
@@ -169,19 +156,19 @@ if(isset($_POST['attachment'])){
                 echo mysqli_query($db, $qry);
                 move_uploaded_file($tmp_name, $img_upload_path);
            
-                # redirect to board.php
-                header("Location: board.php?show=".$cardid);
-            }
-            else{
+              }
+              else{
                 $em = "Ga bisa upload tipe ini";
                 header("Location: board.php?error=$em");
+              }
             }
-        }
-        else{
-            #error message
-            $em = "Unknown Error Ocurred while uploading";
-            header("Location: board.php?error=$em");
-        }
+            else{
+              #error message
+              $em = "Unknown Error Ocurred while uploading";
+              header("Location: board.php?error=$em");
+            }
+          # redirect to board.php
+          header("Location: board.php?show=".$cardid);
     }
     // echo $num_of_img;
     // echo "<pre>";

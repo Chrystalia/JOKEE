@@ -4,6 +4,12 @@
     font-family: Helvetica;
     box-sizing: border-box;
 }
+input{
+    padding: 8px;
+    width: 99.5%;
+    border-radius: 5px;
+    border: none;
+}
 .center{
     display: flex;
     justify-content: center;

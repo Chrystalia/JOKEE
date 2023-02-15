@@ -51,7 +51,7 @@ include_once 'headerr.php';
       <?php $listidx[$list_row['listID']] = $idx;?>
       <div class='list-header horizontal'>
         <span class='list-label'><?php echo $list_row['listTitle'] ?></span>  
-        <a href="board.php?delList=<?php echo $list_row['listID']; ?>"  id="deleteList"><img class="delete-list-img" src="images/x-wo-shadow.svg"></a>
+        <a href="board.php?delList=<?php  echo $list_row['listID']; ?>"  id="deleteList"><img class="delete-list-img" src="images/x-wo-shadow.svg"></a>
       </div>
       <!-- Show card -->
       <?php
@@ -90,8 +90,6 @@ include_once 'headerr.php';
           <button class='btn' type='submit' name='submit'>Add Card</button>
         </div>
       </form>
-      <!-- <div class="overlay2 add-card ">
-      </div> -->
     </div>
   <?php $idx = $idx + 1;  } ?>
     
@@ -111,11 +109,11 @@ include_once 'headerr.php';
 
     <div class="margin-right"></div>
 </div>
-<script src='boardScriptsss.js'></script>
+
 
 
 <!-- Show inside card -->
-  <div class='overlay show-card <?php echo ($_GET['show'] > 0 ? '' : 'hidden') ?>'>
+  <div class='overlay <?php echo ($_GET['show'] > 0 ? '' : 'hidden') ?>'>
     <?php
     $cardid = $_GET['show'];
     $query = mysqli_query($db, "SELECT * FROM cardheader WHERE cardID=$cardid");
@@ -123,16 +121,20 @@ include_once 'headerr.php';
     ?>
     <form class='item-overlay' method='POST' enctype='multipart/form-data'>
       <input type=text class='add-card-title' placeholder='Title' name='title' value="<?php echo $row['cardTitle']?>">
+      <input type=text class='add-card-title' placeholder='Title' name='projectid' value="<?php echo $projectid ?>" style="display:none;">
       <input type="text" name="cardId" value='<?php echo $cardid?>' style="display: none;" >
       <div class='item-overlay-inner' data-card-id=<?php echo $cardid?>>
-        <!-- deadline -->
-        <label for='deadline' class="title-label">Deadline: </label>
-        <input class="edit-calendar" type=date name='deadline' value="<?php echo $row['deadline']?>" placeholder="-">
         
         <!-- description -->
-        <label for='description' class="title-label">Description: </label>
+        <label for='description' class="title-label-top">Description: </label>
         <input class="edit" name='description' value="<?php echo $row['description']?>" placeholder="-" autocomplete="off"></input>
         
+        <!-- deadline -->
+        <div>
+          <label for='deadline' class="title-label">Deadline: </label>
+          <input class="edit-calendar" type=date name='deadline' value="<?php echo $row['deadline']?>" placeholder="-">
+        </div>
+
         <!-- To Do List -->
         <span class="title-label">To Do List:</span>
         <div class="todo-section vertical">
@@ -170,26 +172,37 @@ include_once 'headerr.php';
         
         <!-- <img src="uploads/IMG-63be4f6d6f5b84.13584936.jpg"> -->
         <label class="title-label" for=attachment>Attachment: </label>
+        
         <div class="attached-img-container horizontal">
           <?php
             $attached = mysqli_query($db, "SELECT * FROM cardimage WHERE cardID = $cardid");
 
             while($row = mysqli_fetch_assoc($attached)){ ?>
                <img src="uploads/<?php echo $row['imagePath']?>" class="attached-img">
+                <!-- fp_download -->
+                <a href="b_download.php?file=<?php echo $row['imagePath'] ?>">
+                    <img src="images/download.png"class="btn-download">
+                </a>
+                <!-- Delete -->
+                <a href="b_delete.php?file=<?php echo $row['imagePath'] ?>">
+                    <img src="images/Delete.png"class="btn-delete">
+                </a>
             <?php }?>
         </div>
-        <input type="file"
-                 id="file"
-                 name="images[]"
-                 style="display: none"
-                 multiple>
-          <label for="file">
-              <img src="images/Attachment.svg" class="attachment-icon"> 
-          </label>
-          <input type=text name="cardId" value="<?php echo $cardid ?>" style="display: none;">
-          <button type="submit"
-                  name="attachment"> Upload
-          </button>
+
+          <div class="attach-btn">
+            <input type="file"
+                   id="file"
+                   name="images[]"
+                   class="btn-choose"
+                   multiple>
+            <input type=text name="cardId" value="<?php echo $cardid ?>" style="display: none;">
+            <button type="submit"
+                  name="attachment"
+                  class="btn-upload">
+                  Upload
+            </button>
+          </div>
         <!-- <input type='file' name='attachment[]' id='attachment' multiple=true> -->
         
         <label class="title-label" for="comment">Comment: </label>

@@ -21,7 +21,7 @@
             <div class="br"></div>
             <div>
                 <div>
-                    <button type="button" onclick="addFirstProjects()" id='add-first-project'>+ Add Board</button>
+                    <button type="button" onclick="addFirstProjects()" id='add-first-project'>+ Create my First Board</button>
                 </div>
                 
                 <form id='add-first-project-container' method='POST' enctype='multipart/form-data' style="display: none;">

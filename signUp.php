@@ -1,3 +1,5 @@
+<?php include_once 'db.conn.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,31 +59,29 @@
     </form>
     
     <?php
-    $koneksisignup = mysqli_connect("localhost","root","","jokeedb") or die("Database tidak ditemukan");
     
     if(isset($_POST['username'])){
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = ($_POST['password']);
 
-        $q = mysqli_query($koneksisignup, "select * from users where username='$username'");
+        $q = mysqli_query($db, "select * from users where username='$username'");
         $cek = mysqli_num_rows($q);
 
         if($cek > 0){
             echo "<script>alert('Username already used, please use another username');</script>";
         } else {
-            $q2 = mysqli_query($koneksisignup, "select * from users where email='$email'");
+            $q2 = mysqli_query($db, "select * from users where email='$email'");
             $cek2 = mysqli_num_rows($q2);
     
             if($cek2 > 0){
                 echo "<script>alert('Email already used, please use another email');</script>";
                 } else{
-                    $datasimpan = mysqli_query($koneksisignup, "insert into users set
+                    $datasimpan = mysqli_query($db, "insert into users set
                     username = '$username',
                     email = '$email',
                     userPassword = '$password'
                     ");
-                    echo "<script>alert('Your account has been created');</script>";
                 }
                 echo "<script>location.href='login.php'</script>";
             }

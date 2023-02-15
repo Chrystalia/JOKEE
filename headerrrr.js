@@ -38,6 +38,18 @@ function addProjects() {
     }
 }
 
+function addMember(idx) {
+    var addMember= document.getElementsByClassName("add-member");
+    var cancel= document.getElementsByClassName("add-member-container");
+    if (addMember[idx].style.display === "none") {
+      addMember[idx].style.display = "block";
+      cancel[idx].style.display = "none";
+    } else {
+      addMember[idx].style.display = "none";
+      cancel[idx].style.display = "block";
+    }
+}
+
 function navigateTo(){
     const pathMap = {
         // 'board.php': document.getElementById('board-nav'),
@@ -50,6 +62,5 @@ function navigateTo(){
 
     if (pathMap[path]) {
       pathMap[path].classList.add('active');
-      console.log("if");
     }
 }

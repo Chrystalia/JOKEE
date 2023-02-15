@@ -35,6 +35,8 @@ function addTodo() {
   }
 }
 
+
+
 // Get input field
 var input = document.getElementById("myComment");
 // Execute a function when the user presses a key on the keyboard
@@ -45,7 +47,6 @@ input.addEventListener("keypress", function (event) {
     document.getElementById("submit-comment-btn").click();
   }
 });
-
 
 
 

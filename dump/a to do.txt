@@ -28,3 +28,22 @@ v bagaimana cara agar ketika klik gambar, imagePath ke update yg di user
 - template: show template based on php
 - template: pagination
 - template: left and right arrow hover
+
+v project connected to more than 1 user (30 menit)
+v project owner can add member. If userproject email = session email, than can add member
+v myboard & teamBoard styling
+- kalau sempat -> jika myBoard & teamBoard banyak, apa yg akan tertampil???
+- kalau add member, karena bakal ke refresh, mending sekalian update card
+v perbaikin: kalau sekarang --> delMember, bakal kehapus yang paling bawah
+- buat view yg menghubungan project member id dengan card id di delMember dalam file boardFunction
+- gimana biar kalau add atau del emeail, biar tetap di page board tapi side bar kebuka
+- buka add member hanya bisa satu"
+v invited user belum ada pop up calenar deadline
+v hapus alert pas login
+v card gak bisa di delete kalau ada chat
+v kalau delete atau add attachment, gimana agar tetap di halaman card id yang sesuai
+- buat view calender yg sesuai
+- rename nama file code 
+- testing, cari kalau ada yg kurang
+- kalau aman, push dan commit ke github
+- cari asset buat presentasi

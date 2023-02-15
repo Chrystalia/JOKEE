@@ -1,0 +1,513 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --inter: 'Inter', sans-serif;
+    
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: helvetica;
+}
+
+body{
+    background-image: url("images/Base.png");
+    background-attachment: fixed;
+}
+input.add{
+    padding: 8px;
+    border: none;
+    width: 99.5%;
+    border-radius: 5px;
+}
+.title{
+    display: inline;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+}
+.header{
+    position: fixed;
+    width: 100vw;
+   background-color: #634932;
+   top: 0;
+   left: 0;
+   height: 7.4vh;
+   display: flex;
+   justify-content:center;
+   align-items:center;
+   z-index: 1;
+
+}
+
+.kotak-logo{
+    /* border: 5px solid red; */
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 5vw;
+    position: absolute;
+    
+}
+
+.gambar-logo {
+    width: 6vw;
+    height: 4vh;
+    flex-direction: column;
+    position: relative;
+    display: flex;
+}
+
+.kotak-signout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+    border: none;
+    background-color: #DBC0AB;
+    border-radius: 100px;
+    position: absolute;
+    right: 3%;
+    width: 10vw;
+    height : 4vh;
+    top: 12px;
+    text-align: center;
+    font-size: 10px;
+    box-shadow: 2px 3px 4px rgb(0 0 0 / 0.5 );
+}
+
+.kotak-signout:hover{
+    background: #967258 ;
+    /* mix-blend-mode: color-dodge; */
+    opacity: 0.9;
+}
+
+.tulis-signout{
+    padding-top:6px;
+    font-family: var(--inter);
+    font-size: 14px;
+    color: black;
+    font-weight: 700;
+}
+
+.font-signout{
+    color: white;
+    /* font-size: 10vw; */
+    font-size: 30px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    font-family: var(--inter);
+}
+
+
+.header2{
+    /* background-color: wheat; */
+    position: fixed;
+    display: flex;
+    top: 0px;
+    left: 0px;
+    padding-top: 2px;
+    padding-left: 0px;
+    margin-left: 0px;
+    height: 7vh;
+    width: 100vh;
+    z-index:2;
+    /* position: sticky; */
+}
+
+.kotak-hamburger{
+    /* border: 1px solid red; */
+    display: inline;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0px;
+    width: 4vw;
+    height: 7vh;
+    margin-top: 0px;
+    margin-bottom: 3px;
+    /* color: aliceblue; */
+}
+
+.kotak-hamburger:hover{
+    background-color: #a3714d   ;
+}
+
+.navigate{
+    display: flex;
+    align-items: center;
+    height: 7vh;
+    padding: 0 20px;
+    /* background-color: red; */
+}
+
+.gambar-hamburger{
+    position: relative;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flexbox;
+    height: 3vh;
+    width: fit-content;
+    
+}
+
+.kotak-board{
+    position: relative;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    /* border: 1px solid white; */
+    margin-left: 10px;
+    height: 6.4vh;
+    width: 4vw;
+    padding-left: 15px;
+    margin-top: 0px;
+    /* color: white; */
+    
+}
+
+.kotak-board{
+    border-bottom: 5px solid #DBC0AB;
+    color: #DBC0AB;
+    font-weight: 100;
+}
+/* .kotak-board:hover .tulis-board{
+    color: #DBC0AB;
+    font-weight: 100; 
+    /* border-bottom: 5px solid #DBC0AB; 
+} */
+
+
+.kotak-final-product{
+    position: relative;
+    display: flex   ;
+    justify-content: baseline;
+    align-items: center;
+    /* border: 1px solid white; */
+    margin-left: 0px;
+    height: 6.4vh;
+    width: 8vw;
+    padding-left: 15px;
+    margin-top: 0px;
+    margin-left: 20px;
+    font-weight:40;
+    font-size:small;
+    
+}
+
+.kotak-final-product:visited {
+    color: #DBC0AB;
+    font-weight: 100; 
+    border-bottom: 5px solid #DBC0AB;
+}
+
+/* .kotak-final-product:visited .tulis-final-product{
+    color: #DBC0AB;
+    font-weight: 100; 
+    /* border-bottom: 5px solid #DBC0AB; 
+} */
+
+.kotak-calender{
+    position: relative;
+    display: flex   ;
+    justify-content: baseline;
+    align-items: center;
+    /* border: 1px solid white; */
+    margin-left: 0px;
+    height: 6.4vh;
+    width: 5vw;
+    padding-left: 15px;
+    margin-top: 0px;
+    margin-left: 20px;
+    font-weight:40;
+    font-size:small;
+}
+
+.nav-to{
+    color: #FFFFFF;
+    font-weight:40;
+    font-size:small;
+    font-size: 17px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.nav-to:hover{
+    color: #FFBE9D;
+}
+.active{
+    border-bottom: 5px solid #DBC0AB;
+    color: #FFBE9D;
+}
+.active:hover{
+    text-decoration: none;
+}
+.kotak-calender:visited {
+    color: #DBC0AB;
+    font-weight: 100; 
+    border-bottom: 5px solid #DBC0AB;
+}
+
+/* .kotak-calender:visited .tulis-calender{
+    color: #DBC0AB;
+    font-weight: 100; 
+    /* border-bottom: 5px solid #DBC0AB; 
+} */
+
+
+.kotak-template{
+    /* border: 1px solid white; */
+    position: relative;
+    display: flex   ;
+    justify-content:flex-start;
+    align-items: center;
+    margin-left: 0px;
+    height: 6.4vh;
+    width: 5vw;
+    padding-left: 15px;
+    margin-top: 0px;
+    margin-left: 20px;
+    font-weight:40;
+    font-size:small;
+}
+
+.kotak-template:visited  {
+    color: #DBC0AB;
+    font-weight: 100; 
+    border-bottom: 5px solid #DBC0AB;
+}
+/* 
+.kotak-template:visited .tulis-template{
+    color: #DBC0AB;
+    font-weight: 100; 
+    /* border-bottom: 5px solid #DBC0AB; 
+} */
+
+ .button-sidebar{
+     /* border: 2px solid red; */
+     height: 93vh;
+     width: 320px;
+     background-color: #634932;
+     display: block;
+     transition: 0.5s;
+     top: 0;
+     left: 0;
+     z-index: 1;
+     overflow-x: hidden;
+     margin-top: 7vh;
+     position:fixed;
+   
+ }
+ 
+ .button-sidebar a {
+     display: block;
+     transition: 0.3s;
+     float: none;
+ }
+ 
+ /* @media screen and (max-height: 450px){
+     .button-sidebar {padding}
+ } */
+ 
+ .my-board{
+     margin: 15px 0 5px 30px;
+     font-size: 25px;
+     font-weight:bolder;
+     color: #ECE0D0;
+     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     /* background-color: pink; */
+ }
+ 
+ .simbol-silang{
+     position: relative;
+     flex-direction: column;
+     align-items: flex-end;
+     margin-left: 270px;
+     padding-top: 15px;
+     width: 1.5vw;
+ }
+
+.project-lists{
+    padding: 10px;
+    height: 87vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-names{
+    display: flex;
+    /* align-items: center; */
+}
+
+.project-name-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #967258;
+    padding: 0 20px;
+    margin-top: 1px;
+    width: 300px;
+    height: 30px;
+}
+.project-name{
+    border: none;
+    display: flex;
+    align-items: center;
+    /* width: 250px; */
+    width: 150px;
+    height: 30px;
+    font-family: Helvetica;
+    font-weight: lighter;
+    font-size: 14px;
+    color: #ECE0D0;
+    background-color: inherit;
+}
+.project-name-box:hover{
+    background-color: #82624B;
+}
+.project-name:hover{
+    background-color: #82624B;
+    text-decoration: underline;
+}
+.add-member{
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 100px;
+    color: #ECE0D0;
+    background-color: inherit;
+}
+.add-member:hover{
+    text-decoration: underline;
+}
+.add-member-container{
+    width: 200px;
+    padding: 10px;
+    position: fixed;
+    z-index: 1000;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    background-color: #DBC0AB;
+    border-radius: 5px;
+    border: 1px solid #452D1A;
+    font-size: 15px;
+}
+.add-member-title{
+    font-weight: 550;
+}
+.space-between{
+    display: flex;
+    justify-content: space-between;
+}
+.member-email{
+    margin-left: 10px;
+    width: 12px;
+}
+.member-x-btn{
+    background-color: #DBC0AB;
+    text-decoration: none;
+    width: 10px;
+    color: #634932;
+    margin-right: 5px;
+}
+.x-btn{
+    background-color: inherit;
+    width: 14px;
+    color: #ECE0D0;
+}
+.input-member{
+    height: 25px;
+}
+.input-member-form{
+    margin: 5px 0 10px 0;
+}
+.add-member-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-left: 5px;
+    color:white;
+    height: 25px;
+    width: 25px;
+    background-color:#634932;
+    border: none;
+    border-radius: 5px;
+}
+.project-lists-footer{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+.activate{
+    background-color: #452D1A;
+}
+#add-project{
+    text-decoration: none;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    background: #ECE0D0;
+    border: none;
+    width: 300px;
+    height: 30px;
+    background: #967258;
+    color: #ECE0D0;
+}
+#add-project:hover{
+    background-color: #82624B;
+}
+#add-project-container{
+    display: flex;
+    flex-direction: column;
+    background-color: #967258;
+    width: 100%;
+    color: #967258;
+    border: none;
+    border-radius: 0;
+    padding: 5px;
+}
+
+.horizontal{
+    display: flex;
+    flex-direction: row;
+}
+.vertical{
+    display: flex;
+    flex-direction: column;
+}
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color:white;
+    height: 32px;
+    width: 70px;
+    margin-top: 5px;
+    margin-right: 5px;
+    background-color:#634932;
+    border: none;
+    border-radius: 5px;
+}
+.add{
+    outline: none;
+}
+.add:focus{
+    background-color: white;
+    border: none;
+}
+

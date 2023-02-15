@@ -16,7 +16,6 @@ body::-webkit-scrollbar {
     justify-content:left;
     align-items: flex-start;
 }
-
 #add-list{
     /* background-color: #967258; */
     opacity: .8;
@@ -97,7 +96,7 @@ body::-webkit-scrollbar {
 .card-img{
     color: white;
     display: flex;
-    object-fit: fill;
+    object-fit: cover;
     width: 300px;
     height: 150px;
     border-radius: 5px 5px 0px 0px;
@@ -261,9 +260,11 @@ img.delete-list-img {
     background-color: #f8f1d5;
 }
 .attached-img{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     margin: 10px;
+    object-fit: cover;
+    border-radius: 5px;
 }
 .attached-img-container{
     flex-wrap: wrap;
@@ -275,6 +276,7 @@ input{
     padding: 8px;
     width: 99.5%;
     border-radius: 5px;
+    border: none;
 }
 input:focus{
     background: #f2e8da;
@@ -282,6 +284,7 @@ input:focus{
 }
 .edit{
     background: #ECE0D0;
+    margin-bottom: 10px;
 }
 .edit:hover{
     background: #f1eae1;
@@ -417,6 +420,10 @@ tr:hover {
     left: 10px;
 } */
 
+.title-label-top {
+    padding: 3px;
+    font-weight: 700;
+}
 .title-label {
     margin-top: 10px;
     padding: 3px;
@@ -476,6 +483,68 @@ tr:hover {
     margin-top: 1.5px;
     width: 13px;
 }
+
+.btn-download {
+    /* position: absolute; */
+    /* top: 100%; */
+    /* transform: translate(100%);
+    transform: translate(-105%); */
+    margin-left: -40px;
+    margin-top: 180px;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+.btn-delete {
+    margin-left: -70px;
+    margin-top: 183px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+.attach-btn{
+    display: flex;
+    flex-direction:column;
+}
+
+.attach-btn .btn-choose{
+    font-size: 15px;
+    color: #634932;
+    border-radius: 5px;
+    width: 240px;
+    outline: none;
+}
+.attach-btn .btn-upload{
+    margin-left: 8px;
+    font-size: 15px;
+    color: white;
+    background-color: #634932;
+    border-radius: 5px;
+    width: 103px;
+    padding: 7px;
+    border: none;
+}
+.attach-btn{
+    margin-bottom: 10px;
+}
+::-webkit-file-upload-button{
+    color: white;
+    background: #634932;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    /* box-shadow: 1px 0 1px 1px black; */
+    outline: none;
+    cursor: pointer;
+}
+::-webkit-file-upload-button:hover{
+    background-color: #452D1A;
+}
+.attach-btn .btn-upload:hover{
+    background-color: #452D1A;
+}
+
 .comment-section{
     margin-bottom: 5px;
 }
