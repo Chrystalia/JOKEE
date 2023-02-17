@@ -38,14 +38,14 @@ include_once 'db.conn.php';
                 <button id="tulis-login-submit" name="proses-login" onclick="submits()">Login</button> 
             </div>
             
-            <h4 class="text-account" >Don't have an account?<span class="text-account-2"> <a href="signup.php">Sign Up Now!</a></span></h4>
+            <h4 class="text-account" >Don't have an account?<span class="text-account-2"> <a href="signUp.php">Sign Up Now!</a></span></h4>
         </form>
         
         <?php
         
     if(isset($_POST['proses-login'])){
         $nameOrEmail = $_POST['$nameOrEmail'];
-        $password = $_POST['password'];
+        $password = md5($_POST['password']);
 
         $query = "SELECT * FROM users WHERE 
                 (email = '$nameOrEmail' AND userPassword = '$password') OR 

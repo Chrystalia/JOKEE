@@ -170,7 +170,7 @@ include_once 'header.php';
                <img src="uploads/<?php echo $row['imagePath']?>" class="attached-img">
                 <!-- fp_download -->
                 <a href="b_download.php?file=<?php echo $row['imagePath'] ?>">
-                    <img src="images/download.png"class="btn-download">
+                    <img src="images/Download.png"class="btn-download">
                 </a>
                 <!-- Delete -->
                 <a href="b_delete.php?file=<?php echo $row['imagePath'] ?>">

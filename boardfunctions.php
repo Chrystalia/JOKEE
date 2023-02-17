@@ -1,5 +1,4 @@
 <?php
-$db = mysqli_connect('localhost', 'root', '', 'jokeedb');
 
 // add card
 if(isset($_POST['submit'])){

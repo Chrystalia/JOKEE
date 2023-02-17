@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="SignUp.css">
+    <link rel="stylesheet" href="signUp.css">
     <script type="text/javascript"></script>
     <link rel="shortcut icon" href="images/Logo JOKEE.png" type="image/x-icon">
     <title>Sign Up for a Free Jokee</title>
@@ -60,7 +60,7 @@
     if(isset($_POST['username'])){
         $username = $_POST['username'];
         $email = $_POST['email'];
-        $password = ($_POST['password']);
+        $password = md5($_POST['password']);
 
         $q = mysqli_query($db, "select * from users where username='$username'");
         $cek = mysqli_num_rows($q);
