@@ -8,25 +8,22 @@ include_once 'db.conn.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="loginStyless.css">
-    <link rel="shortcut icon" href="img/Logo JOKEE.png" type="image/x-icon">
-    <title>Jokee LogIn</title>
+    <link rel="stylesheet" href="signIn.css">
+    <link rel="shortcut icon" href="images/Logo JOKEE.png" type="image/x-icon">
+    <title>Sign In to Jokee</title>
 </head>
 <body>
     
 
     <div class="header">
         <div class="kotak-logo">
-            <img src="images/JOKEE.svg" alt="" class="gambar-logo">
+            <a href="home.php"><img src="images/JOKEE.svg" alt="" class="gambar-logo"></a>
         </div>
-        <div class="kotak-signin"><a href = "login.php">
-            <h4 class="tulis-signin">Sign In</h4></a>  
-        </div></a>
     </div>  
 
     <h2 class="font-signin">Sign In</h2>
     
-    <form action="login.php" id="form-email" method="POST" class="form-email"  name="form-email" autocomplete="off">
+    <form action="signIn.php" id="form-email" method="POST" class="form-email"  name="form-email" autocomplete="off">
         <center><div class="kotak-email login-input"> 
             <img src="images/Icon Email.svg" alt="" class="icon-email">
             <input type="text" id="tulis-email" name="$nameOrEmail" placeholder="Email/Username" onkeydown="" autofocus>
@@ -45,12 +42,6 @@ include_once 'db.conn.php';
         </form>
         
         <?php
-    // session_start();
-    // require 'functions.php'; 
-    
-    // isset($_POST['proses-login']
-    
-    // $_SERVER['proses-login'] == 'POST'
         
     if(isset($_POST['proses-login'])){
         $nameOrEmail = $_POST['$nameOrEmail'];
@@ -75,6 +66,6 @@ include_once 'db.conn.php';
     }
     ?>
 
-    <script src="loginScripts.js"></script>
+    <script src="signIn.js"></script>
 </body>
 </html>

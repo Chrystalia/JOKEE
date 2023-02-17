@@ -68,14 +68,13 @@ if(isset($_POST['newMember'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="header.css">
     <link rel="shortcut icon" href="images/Logo JOKEE.png" type="image/x-icon">
-    <title>Jokee Header</title> 
 </head>
 <body>
     <div class="header">
         <div class="kotak-logo">
             <a href="board.php"><img src="images/JOKEE.svg" alt="" class="gambar-logo"></a>
         </div>
-        <a href="logout.php">
+        <a href="signOut.php">
             <div class="kotak-signout">
                 <div class="tulis-signout">Sign Out</div>   
             </div>
@@ -117,9 +116,6 @@ if(isset($_POST['newMember'])){
 
                         } else{
                             $userproject = mysqli_fetch_array($userprojects);
-                            // if($userproject['projectID'] === NULL){
-                            // }else{
-                            // }
                             $projectid = $userproject['projectID'];
                         }
                       }
@@ -217,7 +213,7 @@ if(isset($_POST['newMember'])){
         </div>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="headerrrr.js"></script>
+    <script src="header.js"></script>
 
     <script type="text/javascript">
         $(function() {

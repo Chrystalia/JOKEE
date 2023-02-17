@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="homeStyle.css">
+    <link rel="stylesheet" href="home.css">
     <script src="script.js" defer></script>
     <script type="text/javascript"></script>
     <link rel="shortcut icon" href="images/Logo JOKEE.png" type="image/x-icon">
-    <title>Jokee Home</title>
+    <title>Home | Jokee</title>
 </head>
 <body>
     <div class="header">
         <div class="kotak-logo">
             <img src="images/JOKEE.svg" alt="" class="gambar-logo">
         </div>
-        <a href="login.php">
+        <a href="signIn.php">
             <div class="kotak-signin">
                 <h3 class="tulis-signin">Sign In</h3>    
             </div>

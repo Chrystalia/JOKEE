@@ -19,5 +19,4 @@ move_uploaded_file($_FILES['file']['tmp_name'], $newdir);
 mysqli_query($db, "UPDATE `users` SET `backgroundPath`='$newdir' WHERE email = '$email'");
 echo $newdir;
 header('location: template.php');
-// mysqli_query($db, "UPDATE `users` SET `backgroundPath`='$newdir' WHERE email = '$email'");
 ?>

@@ -1,5 +1,5 @@
 <?php
-include_once 'headerr.php';
+include_once 'header.php';
 // include 'boardfunction.php';
 ?>
 
@@ -9,9 +9,9 @@ include_once 'headerr.php';
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src='boardScriptssss.js' defer></script>
-  <title>Board</title>
-  <link rel="stylesheet" href="boardStylesdsssss.css">
+  <script src='board.js' defer></script>
+  <title>Board | Jokee</title>
+  <link rel="stylesheet" href="board.css">
 </head>
 
 <body>
@@ -31,14 +31,8 @@ include_once 'headerr.php';
     <?php
     }else{
       $_SESSION['projectid'] = $userproject['projectID'];
-      // header('location: board.php');
     }
   }
-// if(isset($_SESSION['projectid'])){
-//   $projectid = $_SESSION['projectid'];
-// } 
-// $_SESSION['projectid'] = $projectid;
-
 ?>
 
 <div class='wrapper'>
@@ -154,10 +148,6 @@ include_once 'headerr.php';
               <a href="board.php"></a>
             </div>
           <?php } ?>
-          <?php //if(isset($_GET['mess']) && $GET['mess'] == 'error'){ ?>
-            <!-- <input type="text" name="todo" placeholder="Add task" style="border-color: darkred;">
-            <button type="submit" name="addToDo">Add</button> -->
-          <?php //} else { ?>
             <button onclick="addTodo()" type="button" id='add-todo' > Add To Do </button>
             <div id="add-todo-container" style="display: none;">
               <input class="add write-todo" name="todo" placeholder="Add task" autocomplete="off">
@@ -170,7 +160,6 @@ include_once 'headerr.php';
             <?php //} ?>
         </div>
         
-        <!-- <img src="uploads/IMG-63be4f6d6f5b84.13584936.jpg"> -->
         <label class="title-label" for=attachment>Attachment: </label>
         
         <div class="attached-img-container horizontal">
@@ -203,7 +192,6 @@ include_once 'headerr.php';
                   Upload
             </button>
           </div>
-        <!-- <input type='file' name='attachment[]' id='attachment' multiple=true> -->
         
         <label class="title-label" for="comment">Comment: </label>
         <input type="text" name="email" value="<?php echo $email?>" style="display: none;">
@@ -213,7 +201,6 @@ include_once 'headerr.php';
           <input type="datetime-local" class="date time datetime" name="datetime" style="display: none;">
           <button type="submit" id="submit-comment-btn" name="comment"><img class="submit-comment-img" src="images/Send Comment.svg"></button>
         </div>
-        <!-- <a href='button.php?comment=<?php ?>'><img class="submit-comment-btn" src="images/Send Comment.svg"></a> -->
         <div class="comment-section vertical">
           <?php
           $comment = mysqli_query($db, "SELECT * FROM chat c LEFT JOIN users u ON c.email=u.email WHERE c.cardID = $cardid ORDER BY id DESC");

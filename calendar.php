@@ -1,5 +1,5 @@
 <?php 
-include 'headerr.php';
+include 'header.php';
 $email = $_SESSION['email']; 
 ?>
 
@@ -8,10 +8,10 @@ $email = $_SESSION['email'];
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>JOKEE</title>
+    <title>Calendar | Jokee</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-    <link rel="stylesheet" href="calendarsss.css">
+    <link rel="stylesheet" href="calendar.css">
   </head>
   <body>
     <!-- background -->
@@ -81,16 +81,7 @@ $email = $_SESSION['email'];
                           && currYear === new Date().getFullYear() ? "active" : "";
               var month = currMonth+1;
               var currDate = `${currYear.toString()}-${month.toString().padStart(2,"0")}-${i.toString().padStart(2,"0")}`;
-              // document.writeln(currDate);
-              //document.cookie = "calendar = " + currDate;
-              <?php // $currDate = $_COOKIE['calendar'];?>
-              <?php $currDate = '${currDate}';
-              //console.log(document.cookie);
-              //console.log("Hello")
-              //console.log(currDate);
-              // $usercalendar = mysqli_query($db, $qry);
-              //$row = mysqli_fetch_assoc($usercalendar);
-              ?>
+              <?php $currDate = '${currDate}';?>
               
               <?php if(mysqli_num_rows($usercalendar) == 0){ ?>
                 liTag += `<li class="${isToday}">${i}</li>`
@@ -102,11 +93,7 @@ $email = $_SESSION['email'];
                   idx++;
                   if(flag === -1){
                   } 
-                  // elseif(){
-                    // kondisi kalau lebih dari 2
-                    // bikin SELECT * FROM calendar WHERE email ='$email AND deadline = currDate;
-                    // kalau baris lebih dari 2, jalanin else if ini
-                  else if(currDate === '<?php echo $row['deadline'] ?>' ){ // harusnya 6 Januari muncul 2x
+                  else if(currDate === '<?php echo $row['deadline'] ?>' ){ 
                     // loop sebanyak qry
                     <?php 
                       $deadline = $row['deadline'];
@@ -125,20 +112,6 @@ $email = $_SESSION['email'];
                   }
                 <?php } ?>
               <?php } ?>    
-              
-                        
-                        //$row = mysqli_fetch_assoc($usercalendar);
-                        // echo $row['deadline']
-                        //while($row = mysqli_fetch_assoc($usercalendar)){
-                          // if()
-                          //echo $currDate."==="."'2023-01-20'";
-                          // echo $qry;
-                            //if(strcmp($currDate, $row['deadline']) == 0){ ?>
-
-                            <?php //} ?>
-                        <?php //} ?>
-                        
-                // console.log(currDate);
           }
 
           for (let i = lastDayofMonth; i < 6; i++) { // creating li of next month first days

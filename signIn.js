@@ -24,18 +24,3 @@ function validasi(){
     }
     return true;
 }
-
-// iterate through elements of the same class name and detect two different events.
-
-// var iter = document.getElementsByClassName('login-input')
-// Array.from(iter).forEach(function(x){
-//   x.addEventListener("keyup", function(event) {
-//     console.log("masuk")
-//     // Number 13 is the "Enter" key on the keyboard
-//     if (event.keyCode === 13) {
-//       console.log("if")
-//       // Focus on the next sibling
-//       x.nextElementSibling;
-//     }
-//   });
-// })

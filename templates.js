@@ -248,20 +248,3 @@ function ajax_file_upload(file_obj) {
         xhttp.send(form_data);
     }
 }
-
-// const productContainers = [...document.querySelector('.pic img')];
-// const nxtBtn = [...document.querySelector('.nxt-btn')];
-// const prevBtn = [...document.querySelector('.prev-btn')];
-
-// productContainers.forEach((item, i) => {
-//     let containerDimensions = item.getBoundingClientRect();
-//     let containerWidth = containerDimensions.width;
-
-//     nxtBtn[i].addEvenetListener('click', () => {
-//         item.scrollLeft += containerWidth;
-//     })
-
-//     prevBtn[i].addEvenetListener('click', () => {
-//         item.scrollLeft -= containerWidth;
-//     })
-// });

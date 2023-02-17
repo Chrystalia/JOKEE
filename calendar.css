@@ -63,9 +63,6 @@ header .icons span{
     user-select: none;
     border-radius: 50%;
 }
-/* .icons span:last-child{
-    /* margin-right: -10px; 
-} */
 header .icons span:hover{
     background: #513b27;
 }
@@ -160,11 +157,4 @@ ul.deadline{
     z-index: -1;
     border-radius: 50%;
     transform: translate(-50%, -50%);
-}
-/*
-.days li.active::before{
-    /* background: black; 
-}
-.days li:not(.active):hover::before{
-    /* background: red; 
 }

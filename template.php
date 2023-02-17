@@ -1,13 +1,10 @@
-<?php 
-// session_start();
-// $db = mysqli_connect('localhost', 'root', '', 'jokeedb');     
-include_once 'headerr.php';
+<?php  
+include_once 'header.php';
 $email = $_SESSION['email'];
 
 if(isset($_POST['change-bg'])){
     $backgroundPath = $_POST['change-bg'];
     if(mysqli_query($db, "UPDATE `users` SET `backgroundPath`='$backgroundPath' WHERE email = '$email'")){
-        ?> <script> //window.location.replace("template.php") </script> <?php
     }
 }
 ?>
@@ -19,7 +16,7 @@ if(isset($_POST['change-bg'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='template.css'>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <title>Document</title>
+    <title>Template | Jokee</title>
 </head>
 <body>
     <!-- background -->

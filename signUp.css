@@ -45,6 +45,7 @@ position: sticky;
 }
 
 .gambar-logo {
+    margin-top: 4px;
     width: 6vw;
     height: 6vh;
 }

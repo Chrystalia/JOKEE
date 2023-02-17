@@ -312,19 +312,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     height: 30px;
 }
 
-/* input:focus{
-    outline: 1px solid #efefef;
-} */
-/* form{
-    width: 300px;
-    border-radius: 5px;
-    background: #ECE0D0;
-}
-form p{
-    color: red;
-    margin: 0px;
-} */
-
 .task-input{
     width: 73%;
     height: 15px;
@@ -408,17 +395,6 @@ tr:hover {
     border: none;
     background-color: #967258;
 }
-/* .add-card-title:before{
-    display: block;
-    width: 16px;
-    height: 16px;
-    content: '';
-    background: #adff2f;
-    border-radius: 100%;
-    position: absolute;
-    top: 40%;
-    left: 10px;
-} */
 
 .title-label-top {
     padding: 3px;
@@ -485,10 +461,6 @@ tr:hover {
 }
 
 .btn-download {
-    /* position: absolute; */
-    /* top: 100%; */
-    /* transform: translate(100%);
-    transform: translate(-105%); */
     margin-left: -40px;
     margin-top: 180px;
     cursor: pointer;

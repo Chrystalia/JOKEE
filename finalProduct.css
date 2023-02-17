@@ -3,15 +3,6 @@
     margin: 0;
     padding: 0;
 }
-
-/* a:link{
-    text-decoration: none;
-} */
-
-/* a:hover{
-    color: white;
-} */
-
 .top-margin{
     min-height: 80px;
 }
@@ -39,10 +30,6 @@
 }
 
 .gallery .btn-download {
-    /* position: absolute; */
-    /* top: 100%; */
-    /* transform: translate(100%);
-    transform: translate(-105%); */
     margin-left: -40px;
     margin-bottom: -100px;
     cursor: pointer;
@@ -85,7 +72,6 @@
     padding: 10px;
     border: none;
     border-radius: 5px 0px 0px 5px;
-    /* box-shadow: 1px 0 1px 1px black; */
     outline: none;
     cursor: pointer;
 }
@@ -131,46 +117,3 @@
 .btn-close-container:hover{
     background: rgba(76, 41, 22, 0.5)
 }
-/* .gallery .img-popup{
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, .5);
-    height: 100%;
-    width: 100%;
-    z-index: 100;
-} */
-
-
-/* 
-.gallery .popup-image{
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, .8);
-    height: 100%;
-    width: 100%;
-    z-index: 100;
-}
-
-.gallery .popup-image span{
-    position: absolute;
-    top: 0;
-    right: 10px;
-    font-size: 60px;
-    font-weight: bolder;
-    color: white;
-    cursor: pointer;
-    z-index: 100;
-}
-
-.gallery .popup-image img{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 5px solid white;
-    border-radius: 5px;
-    width: 750px;
-    object-fit: cover;
-} */

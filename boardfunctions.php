@@ -1,6 +1,4 @@
 <?php
-// var_dump(count($_FILES['attachment']['name']));
-// die;
 $db = mysqli_connect('localhost', 'root', '', 'jokeedb');
 
 // add card
@@ -16,17 +14,6 @@ if(isset($_POST['submit'])){
     $insertqry = "INSERT INTO `cardheader`(`listID`, `cardTitle`) VALUES ('$listId', '$cardTitle')";
     mysqli_query($db, $insertqry);
     $card_id = mysqli_insert_id($db);
-    // for($i = 0; $i < count($_FILES['attachment']['name']); $i++){
-    //   $target = '/uploads/'.$_FILES['attachment']['name'][$i];
-    //   move_uploaded_file($_FILES['attachment']['tmp_name'][$i], $_SERVER['DOCUMENT_ROOT'].'/'.$target);
-    //   $insertimgqry = "INSERT INTO `cardimage`(`cardID`, `imagePath`) VALUES ('$card_id', '$target')";
-    //   mysqli_query($db, $insertimgqry);
-    // }
-    // for($i = 0; $i < count($_POST['todos']); $i++){
-    //   $current_todo = $_POST['todos'][$i];
-    //   $inserttodoqry = "INSERT INTO `cardtodolist`(`cardID`, `toDoList`) VALUES ('$card_id', '$current_todo')";
-    //   mysqli_query($db, $inserttodoqry);
-    // }
   }
   header('location: board.php');
 }
@@ -54,7 +41,6 @@ if(isset($_GET['delCard'])){
 if(isset($_POST['addList'])){
   $projectid = $_POST['projectId'];
   $listTitle = $_POST['newListTitle'];
-  // $projectID = $_POST['projectID'];
 
   // can't input empty
   if(empty($listTitle)){
@@ -81,13 +67,12 @@ if(isset($_POST['addToDo'])){
   $cardTitle = $_POST['title'];
   $desc = $_POST['description'];
   $deadline = $_POST['deadline'];
-  $colorCode = 0;
   $todo = $_POST['todo'];
 
   if(empty($todo)){
-
+    
   } else{
-    $updateqry = "UPDATE `cardheader` SET cardTitle='$cardTitle', `description`='$desc', `deadline`='$deadline', colorCode='$colorCode' WHERE cardID=$cardid";
+    $updateqry = "UPDATE `cardheader` SET cardTitle='$cardTitle', `description`='$desc', `deadline`='$deadline' WHERE cardID=$cardid";
     mysqli_query($db, $updateqry);
   
     $todoquery = "INSERT INTO `cardtodolist`(`cardID`, `toDoList`) VALUES ('$cardid','$todo')";
@@ -109,9 +94,6 @@ if(isset($_GET['checked'])){
   }
   mysqli_query($db, $checkqry);
   header('Location: board.php?show='.$todolist['cardID']);
-  // echo $id;
-  // echo mysqli_query($db, "SELECT cardID FROM cardtodolist WHERE id=$id");
-  // echo $cardid;
 }
 
 // delete To Do 
@@ -170,9 +152,6 @@ if(isset($_POST['attachment'])){
           # redirect to board.php
           header("Location: board.php?show=".$cardid);
     }
-    // echo $num_of_img;
-    // echo "<pre>";
-    // print_r($_FILES['images']['name'][0]);
 }
 
 if(isset($_GET['swipe-left'])){
@@ -236,8 +215,4 @@ if(isset($_POST['comment'])){
   header('Location: board.php?show='.$cardid);
 }
 
-// close card
-// if(isset($_GET['closeCard'])){
-//   header('Location: board.php');
-// }
 ?>

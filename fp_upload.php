@@ -33,9 +33,6 @@ if(isset($_POST['upload'])){
     
                 $sql = "INSERT INTO `finalproduct`(`img_name`, `email`) VALUES ('$new_img_name','$email')";
                 $stmt = mysqli_query($db,$sql);
-                // $stmt->execute([$new_img_name]);
-                // $stmt = $conn->prepare($sql);
-                // $stmt->execute([$new_img_name]);
                 
                 move_uploaded_file($tmp_name, $img_upload_path);
            
@@ -53,7 +50,4 @@ if(isset($_POST['upload'])){
             header("Location: finalProduct.php?error=$em");
         }
     }
-    // echo $num_of_img;
-    // echo "<pre>";
-    // print_r($_FILES['finalproduct']['name'][0]);
 }

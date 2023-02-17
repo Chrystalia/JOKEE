@@ -6,21 +6,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="SignUpStyles.css">
+    <link rel="stylesheet" href="SignUp.css">
     <script type="text/javascript"></script>
-    <link rel="shortcut icon" href="img/Logo JOKEE.png" type="image/x-icon">
-    <title>Jokee SignUp</title>
+    <link rel="shortcut icon" href="images/Logo JOKEE.png" type="image/x-icon">
+    <title>Sign Up for a Free Jokee</title>
 
 
 </head>
 <body>
 <div class="header">
         <div class="kotak-logo">
-            <img src="images/JOKEE.svg" alt="" class="gambar-logo">
+            <a href="home.php"><img src="images/JOKEE.svg" alt="" class="gambar-logo"></a>
         </div>
-        <div class="kotak-signin"> <a href = "login.php">
-            <h4 class="tulis-signin">Sign In</h4>  
-        </div></a>
     </div>
 
     <h2 class="font-signin">Sign Up</h2>
@@ -55,7 +52,7 @@
             <div class="submit-createe">Create an Account</div>
         </div>
 
-        <h4 class="text-account" >Already have an account? <span class="text-account-2"> <a href="logIn.php">Sign In </a></span></h4>
+        <h4 class="text-account" >Already have an account? <span class="text-account-2"> <a href="signIn.php">Sign In </a></span></h4>
     </form>
     
     <?php
@@ -73,18 +70,21 @@
         } else {
             $q2 = mysqli_query($db, "select * from users where email='$email'");
             $cek2 = mysqli_num_rows($q2);
-    
-            if($cek2 > 0){
-                echo "<script>alert('Email already used, please use another email');</script>";
-                } else{
-                    $datasimpan = mysqli_query($db, "insert into users set
-                    username = '$username',
-                    email = '$email',
-                    userPassword = '$password'
-                    ");
-                }
-                echo "<script>location.href='login.php'</script>";
+            
+            if($username == NULL || $email == NULL || $password == NULL){
+                echo "<script>alert('You must fill in the data completely!');</script>";
             }
+            else if($cek2 > 0){
+                echo "<script>alert('Email already used, please use another email');</script>";
+            } else{
+                $datasimpan = mysqli_query($db, "insert into users set
+                username = '$username',
+                email = '$email',
+                userPassword = '$password'
+                ");
+                echo "<script>location.href='signIn.php'</script>";
+            }
+        }
     }
     
     ?>

@@ -14,7 +14,7 @@
         var password = document.getElementById("set-password").value;  
         var check = document.forms["formset"]["agree"].checked;
         // var check = document.get
-        
+        console.log("masuk sini")
         if(username == "" && email == "" && password == "" && check == false){
             alert("You must fill in the data completely!");
             return false;
