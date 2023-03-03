@@ -49,7 +49,7 @@
         <div class="tombol-create">
             <!-- <h4 class="tulis-create"></h4>   -->
             <input type="hidden" class="submit-create" value="Create an Account" name="create">
-            <div class="submit-createe">Create an Account</div>
+            <div onclick="validasi()" class="submit-createe">Create an Account</div>
         </div>
 
         <h4 class="text-account" >Already have an account? <span class="text-account-2"> <a href="signIn.php">Sign In </a></span></h4>
